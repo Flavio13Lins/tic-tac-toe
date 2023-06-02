@@ -1,13 +1,29 @@
-import Vue from 'vue'
+import './assets/main.css'
+
+import { createApp } from 'vue'
 import App from './App.vue'
-import './registerServiceWorker'
 import router from './router'
-import store from './store'
+import { createStore } from 'vuex'
 
-Vue.config.productionTip = false
+// Create a new store instance.
+const store = createStore({
+  state() {
+    return {
+      count: 0
+    }
+  },
+  mutations: {
+    increment(state) {
+      state.count++
+    }
+  }
+})
 
-new Vue({
-  router,
-  store,
-  render: h => h(App)
-}).$mount('#app')
+// const app = createApp({ /* your root component */ })
+const app = createApp(App)
+
+app.use(store)
+
+app.use(router)
+
+app.mount('#app')
