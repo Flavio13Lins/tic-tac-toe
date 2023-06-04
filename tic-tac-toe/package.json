@@ -10,8 +10,11 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
+    "@mdi/font": "^7.2.96",
+    "@vueuse/core": "^10.1.2",
     "vue": "^3.3.2",
     "vue-router": "^4.2.0",
+    "vuetify": "^3.3.2",
     "vuex": "^4.0.2"
   },
   "devDependencies": {

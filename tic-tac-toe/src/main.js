@@ -1,26 +1,25 @@
 import './assets/main.css'
+import '@mdi/font/css/materialdesignicons.min.css'
 
 import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
-import { createStore } from 'vuex'
+import store from './store'
 
-// Create a new store instance.
-const store = createStore({
-  state() {
-    return {
-      count: 0
-    }
-  },
-  mutations: {
-    increment(state) {
-      state.count++
-    }
-  }
+// Vuetify
+import 'vuetify/styles'
+import { createVuetify } from 'vuetify'
+import * as components from 'vuetify/components'
+import * as directives from 'vuetify/directives'
+
+const vuetify = createVuetify({
+  components,
+  directives
 })
 
-// const app = createApp({ /* your root component */ })
 const app = createApp(App)
+
+app.use(vuetify)
 
 app.use(store)
 
