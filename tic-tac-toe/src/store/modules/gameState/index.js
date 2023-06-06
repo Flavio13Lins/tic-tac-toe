@@ -1,6 +1,7 @@
 export const state = () => ({
   started: false,
   paused: false,
+  loading: false,
   btnStatus: {
     positionA: -1, // 0 for O // 1 for X
     positionB: -1,
