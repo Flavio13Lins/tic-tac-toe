@@ -26,11 +26,11 @@ export const getters = {
 }
 
 export const actions = {
-  async list({ state }) {
+  list({ state }) {
     return state.list
   },
 
-  async listOne({ state }, nome) {
+  listOne({ state }, nome) {
     let exercicio = {}
     state.list.forEach((element) => {
       if (element.nome === nome) {
@@ -40,13 +40,13 @@ export const actions = {
     return exercicio
   },
 
-  async create({ dispatch, commit }, exercise) {
+  create({ dispatch, commit }, exercise) {
     commit('addToList', exercise)
     dispatch('list')
     return true
   },
 
-  async delete({ dispatch, commit }, exercise) {
+  delete({ dispatch, commit }, exercise) {
     commit('deleteFromList', exercise)
     dispatch('list')
   }

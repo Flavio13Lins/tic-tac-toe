@@ -1,7 +1,7 @@
 @import './base.css';
 
 #app {
-  margin: 0 0;
+  margin: 0 0 !important;
   padding: 0rem;
   font-weight: normal;
 }
