@@ -7,7 +7,9 @@ export default {
   computed: mapState({
     started: (state) => state.gameState.started,
     paused: (state) => state.gameState.paused,
-    loading: (state) => state.gameState.loading
+    loading: (state) => state.gameState.loading,
+    finished: (state) => state.gameState.finished,
+    winner: (state) => state.gameState.winner
   }),
   components: {
     ScopedGameStateBtn,
@@ -34,6 +36,10 @@ export default {
         text="Reset"
         variant="outlined"
       ></ScopedGameStateBtn>
+      <h3 v-if="finished && winner === -1">Empate</h3>
+      <h3 v-if="finished">
+        {{ winner ? 'Que pena, você perdeu!' : 'Parabéns, você conseguiu ganhar!' }}
+      </h3>
     </v-col>
   </v-row>
   <TableToPlay v-if="!loading && started"></TableToPlay>
