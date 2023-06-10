@@ -17,17 +17,6 @@ let styleDEGHMD = `border-top: ${barsLengthMD} solid ${cor}; border-right: ${bar
 let styleFIMD = `border-top: ${barsLengthMD} solid ${cor};`
 let styleABMD = `border-right: ${barsLengthMD} solid ${cor};`
 let hoverBlock = ' background-color: hsla(160, 100%, 37%, 1); border-radius: 30px;'
-// const posList = [
-//   'positionA', // 0 for O // 1 for X
-//   'positionB',
-//   'positionC',
-//   'positionD',
-//   'positionE',
-//   'positionF',
-//   'positionG',
-//   'positionH',
-//   'positionI'
-// ]
 </script>
 <script>
 import { mapState } from 'vuex'
