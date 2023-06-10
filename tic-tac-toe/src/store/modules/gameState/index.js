@@ -302,23 +302,6 @@ export const actions = {
         return { rotation, play: possible.play }
       }
     }
-
-    // const cList = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I']
-    // const userPlays = []
-    // const pcPlays = []
-    // const empity = []
-    // for (const c of cList) {
-    //   const value = await dispatch('getBtnStatusInPos', c)
-    //   console.log({ value, c })
-    //   if (value === -1) {
-    //     empity.push(c)
-    //   } else if (value === 0) {
-    //     userPlays.push(c)
-    //   } else if (value === 1) {
-    //     pcPlays.push(c)
-    //   }
-    // }
-
     return { rotation }
   },
   async checkWinner({ state, commit }) {
