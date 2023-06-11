@@ -3,7 +3,7 @@
     <v-col
       class="d-flex flex-column align-center justify-center"
       v-bind="props"
-      @click="$store.dispatch('gameState/userClickPosition', position)"
+      @click.exact="userClick"
       :style="
         mdAndUp
           ? isHovering
@@ -40,8 +40,19 @@ export default {
       greenO
     }
   },
+  methods: {
+    userClick() {
+      if (this.finished || this.paused) {
+        return
+      } else {
+        this.$store.dispatch('gameState/userClickPosition', this.position)
+      }
+    }
+  },
   computed: mapState({
     btnStatus: (state) => state.gameState.btnStatus,
+    finished: (state) => state.gameState.finished,
+    paused: (state) => state.gameState.paused,
     positionValue: () => this.btnStatus[this.position]
   }),
   props: {

@@ -1,7 +1,16 @@
 <script setup>
-import TheWelcome from '../../components/TheWelcome.vue'
+import HomePage from '@/components/HomePageComponent.vue'
+// import TheFooter from '@/components/TheFooter.vue'
 </script>
 
 <template>
-  <TheWelcome />
+  <HomePage />
+  <!-- <TheFooter class="footer" /> -->
 </template>
+
+<style scoped>
+#footer {
+  position: fixed;
+  bottom: 0;
+}
+</style>

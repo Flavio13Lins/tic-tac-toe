@@ -2,6 +2,7 @@
 import { mapState } from 'vuex'
 import ScopedGameStateBtn from './ScopedGameStateBtn.vue'
 import TableToPlay from './TableToPlay.vue'
+// import TheFooter from './TheFooter.vue'
 
 export default {
   computed: mapState({
@@ -36,10 +37,9 @@ export default {
         text="Reset"
         variant="outlined"
       ></ScopedGameStateBtn>
-      <h3 v-if="finished && winner === -1">Empate</h3>
-      <h3 v-if="finished">
-        {{ winner ? 'Que pena, você perdeu!' : 'Parabéns, você conseguiu ganhar!' }}
-      </h3>
+      <h3 v-if="finished && winner === -1">Draw</h3>
+      <h3 v-if="finished && winner === 1">Sorry, you lose!</h3>
+      <h3 v-if="finished && winner === 0">What? YOU WON!</h3>
     </v-col>
   </v-row>
   <TableToPlay v-if="!loading && started"></TableToPlay>
