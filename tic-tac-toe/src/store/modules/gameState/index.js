@@ -2,7 +2,7 @@ import plays from './generalPlays'
 export const state = () => ({
   started: false,
   paused: false,
-  loading: false,
+  isLoading: false,
   finished: false,
   stage: 0,
   winner: -1,
@@ -25,8 +25,8 @@ export const getters = {
   started(state) {
     return state.started
   },
-  loading(state) {
-    return state.loading
+  isLoading(state) {
+    return state.isLoading
   },
   winner(state) {
     return state.winner
@@ -47,24 +47,32 @@ export const getters = {
 
 export const actions = {
   async startNewGame({ commit }) {
+    commit('setIsLoading', true)
     commit('resetTable')
     commit('startNewGame')
+    commit('setIsLoading', false)
 
     return
   },
   async pauseGame({ commit }) {
+    commit('setIsLoading', true)
     commit('setPaused', true)
+    commit('setIsLoading', false)
     return
   },
   async resumeGame({ commit }) {
+    commit('setIsLoading', true)
     commit('setStarted', true)
     commit('setPaused', false)
+    commit('setIsLoading', false)
     return
   },
   async resetGame({ commit }) {
+    commit('setIsLoading', true)
     commit('setStarted', false)
     commit('setPaused', false)
     commit('resetTable')
+    commit('setIsLoading', false)
     return
   },
   async getBtnStatusInPos({ state }, pos) {
@@ -676,6 +684,9 @@ export const mutations = {
   },
   setPaused(state, data) {
     state.paused = data
+  },
+  setIsLoading(state, data) {
+    state.isLoading = data
   },
   setStage(state, data) {
     state.stage = data

@@ -1,6 +1,6 @@
 <template>
   <v-btn
-    :loading="loading"
+    :loading="isLoading"
     :variant="variant"
     :stacked="stacked"
     :prepend-icon="hasIcon && iconPos === 'left' ? icon : ''"
@@ -8,26 +8,22 @@
     :icon="onlyIcon ? icon : false"
     v-if="!onlyIcon"
     :size="size"
-    @click="$store.dispatch(`gameState/${action}`)"
+    @click="click"
   >
     <span>{{ text }}</span>
   </v-btn>
-  <v-btn
-    :loading="loading"
-    :icon="icon"
-    v-if="onlyIcon"
-    :size="size"
-    @click="$store.dispatch(`gameState/${action}`)"
-  ></v-btn>
+  <v-btn :loading="isLoading" :icon="icon" v-if="onlyIcon" :size="size" @click="click"></v-btn>
 </template>
 
 <script>
+import { mapState } from 'vuex'
+
 export default {
+  inheritAttrs: false,
+  computed: mapState({
+    isLoading: (state) => state.gameState.isLoading
+  }),
   props: {
-    loading: {
-      type: Boolean,
-      default: true
-    },
     hasIcon: {
       type: Boolean,
       default: true
@@ -63,6 +59,17 @@ export default {
     action: {
       type: String,
       default: 'startNewGame'
+    }
+  },
+  emits: {
+    scrollToGame: null
+  },
+  methods: {
+    click() {
+      this.$store.dispatch(`gameState/${this.action}`)
+      if (this.action === 'startNewGame') {
+        this.$emit('scrollToGame')
+      }
     }
   }
 }
