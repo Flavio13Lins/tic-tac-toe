@@ -49,7 +49,7 @@ export const actions = {
   async startNewGame({ commit }) {
     commit('resetTable')
     commit('startNewGame')
-    console.log({ plays })
+
     return
   },
   async pauseGame({ commit }) {
@@ -73,22 +73,11 @@ export const actions = {
   async userClickPosition({ state, dispatch, commit }, position) {
     if (state.btnStatus[position] === -1) {
       commit('putValueInPosition', { position, value: 0 })
-      commit('incStage')
       const winner = await dispatch('checkWinner')
       if (winner === -1) {
         await dispatch('computerPlay')
       }
     }
-    const btnStatus = Object.assign({}, state.btnStatus)
-    const prov90 = await dispatch('rotate90', btnStatus)
-    const prov180 = await dispatch('rotate180', btnStatus)
-    const prov270 = await dispatch('rotate270', btnStatus)
-    console.log({ prov90, prov180, prov270 })
-    const provX = await dispatch('reflectXaxis', btnStatus)
-    const provY = await dispatch('reflectYaxis', btnStatus)
-    const provi = await dispatch('reflectXieqY', btnStatus)
-    const provd = await dispatch('reflectYneqX', btnStatus)
-    console.log({ provX, provY, provi, provd })
 
     return
   },
@@ -112,8 +101,8 @@ export const actions = {
       if (rotation.rotated) {
         rotatedPlay = await dispatch(rotation.rotated, rotatedPlay)
       }
+
       commit('putValueInPosition', { position: rotatedPlay, value: 1 })
-      commit('incStage')
     }
 
     await dispatch('checkWinner')
@@ -131,7 +120,6 @@ export const actions = {
     }
 
     for (const possible of plays.filter((p) => p.stage === state.stage)) {
-      console.log('pcplay', { possible })
       // donothing
       let possibleCurrent = await dispatch('isCurrentState', possible.status)
       if (possibleCurrent) {
@@ -320,11 +308,9 @@ export const actions = {
       }
       if (winnerPlayer === 3) {
         commit('setWinner', 0)
-        commit('setFinished', true)
       }
       if (winnerAI === 3) {
         commit('setWinner', 1)
-        commit('setFinished', true)
       }
     })
 
@@ -694,11 +680,12 @@ export const mutations = {
   setStage(state, data) {
     state.stage = data
   },
-  incStage(state) {
-    state.stage += 1
-  },
   setWinner(state, data) {
     state.winner = data
+    if (data === 0 || data === 1) {
+      state.finished = true
+      state.paused = true
+    }
   },
   setFinished(state, data) {
     state.finished = data
@@ -729,7 +716,14 @@ export const mutations = {
   putValueInPosition(state, data) {
     const position = data.position
     const value = data.value
-    state.btnStatus[position] = value
+    if (state.btnStatus[position] === -1) {
+      state.btnStatus[position] = value
+      state.stage += 1
+      if (state.stage === 9) {
+        state.finished = true
+        state.paused = true
+      }
+    }
   }
 }
 
