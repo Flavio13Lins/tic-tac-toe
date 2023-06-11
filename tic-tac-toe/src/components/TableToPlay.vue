@@ -16,7 +16,7 @@ let styleBtnMD = `min-width: 274px; min-height: 274px;`
 let styleDEGHMD = `border-top: ${barsLengthMD} solid ${cor}; border-right: ${barsLengthMD} solid ${cor};`
 let styleFIMD = `border-top: ${barsLengthMD} solid ${cor};`
 let styleABMD = `border-right: ${barsLengthMD} solid ${cor};`
-let hoverBlock = ' background-color: hsla(160, 100%, 37%, 1); border-radius: 30px;'
+let hoverBlock = ' background-color: #3CB371; border-radius: 30px;'
 </script>
 <script>
 import { mapState } from 'vuex'
