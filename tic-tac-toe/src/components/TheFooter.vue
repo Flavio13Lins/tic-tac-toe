@@ -13,9 +13,9 @@
       </div>
 
       <div class="pt-0">
-        This is a project to put in practice some of my abilities and practice while having fun. The
-        main idea here is to recognise the best pattern in tic-tac-toe game. Making it impossible to
-        win, in the best case you might draw. I did a kind of a map for the player possible moves,
+        This is a project to put into practice some of my abilities and training while having fun.
+        The main idea here is to recognize the best pattern in a tic-tac-toe game. Making it
+        impossible to win, in the best case, you might draw. I mapped the player's possible moves,
         finding the solution with reflect or rotations functions to the table if necessary. If you
         want to know more, contact me.
       </div>
