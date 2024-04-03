@@ -3,9 +3,10 @@
     <v-footer class="bg-teal-darken-4 text-center d-flex flex-column">
       <div>
         <v-btn
-          v-for="icon in icons"
           :key="icon.name"
+          v-for="icon in icons"
           class="mx-4"
+          :href="icon.link"
           :icon="icon.name"
           @click="openTabWith(icon.link)"
           variant="text"
@@ -23,7 +24,7 @@
       <v-divider></v-divider>
 
       <div>{{ new Date().getFullYear() }} — <strong>Flavio13Lins</strong></div>
-    </v-footer>
+          </v-footer>
   </v-layout>
 </template>
 
@@ -32,7 +33,7 @@ export default {
   methods: {
     openTabWith(link) {
       window.open(link, '_blank')
-    }
+        }
   },
   data() {
     return {
