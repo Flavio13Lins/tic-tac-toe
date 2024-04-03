@@ -44,6 +44,10 @@ export default {
         {
           name: 'mdi-github',
           link: 'https://github.com/Flavio13Lins'
+        },
+        {
+          name: 'mdi-instagram',
+          link: 'https://www.instagram.com/Flavio13Lins'
         }
       ]
     }
