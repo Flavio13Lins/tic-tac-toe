@@ -24,19 +24,48 @@
       <v-divider></v-divider>
 
       <div>{{ new Date().getFullYear() }} — <strong>Flavio13Lins</strong></div>
-          </v-footer>
+      <div>
+        Email me at 
+        <a href="mailto:flavio13lins@gmail.com">flavio13lins@gmail.com</a>
+        <v-tooltip location="top" :text="copyText">
+          <template v-slot:activator="{ props }">
+            <v-btn
+              v-bind="props"
+              style="cursor: pointer;"
+              icon="mdi-content-copy"
+              variant="text"
+              size="x-small"
+              @click="copyCode"
+              @mouseout="reset"
+            ></v-btn>
+          </template>
+        </v-tooltip>
+      </div>
+    </v-footer>
   </v-layout>
 </template>
 
 <script>
 export default {
+  created() {
+    this.copyText = this.text
+  },
   methods: {
     openTabWith(link) {
       window.open(link, '_blank')
-        }
+    },
+    async copyCode() {
+      await navigator.clipboard.writeText("flavio13lins@gmail.com");
+      this.copyText = "Copied"
+    },
+    reset() {
+      this.copyText = this.text
+    }
   },
   data() {
     return {
+      text: "Copy email",
+      copyText: '',
       icons: [
         {
           name: 'mdi-linkedin',
