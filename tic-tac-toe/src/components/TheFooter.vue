@@ -1,6 +1,6 @@
 <template>
   <v-layout>
-    <v-footer class="bg-teal-darken-4 text-center d-flex flex-column">
+    <v-footer style="color: white; background-color: var(--primary-color);" class="text-center d-flex flex-column">
       <div>
         <v-btn
           :key="icon.name"
