@@ -30,14 +30,14 @@
 
 <script>
 import { mapState } from 'vuex'
-import redX from '@/assets/svgs/xred.svg'
-import greenO from '@/assets/svgs/ogreen.svg'
+import imageX from '@/assets/svgs/x.svg'
+import imageO from '@/assets/svgs/o.svg'
 
 export default {
   data() {
     return {
-      redX,
-      greenO
+      imageX,
+      imageO
     }
   },
   methods: {
