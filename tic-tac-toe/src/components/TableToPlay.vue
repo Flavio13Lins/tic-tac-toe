@@ -1,7 +1,8 @@
 <script setup>
 import { useDisplay } from 'vuetify'
 const { mdAndUp } = useDisplay()
-const cor = 'var(--color-border)'
+const cor = 'var(--quinary-color)'
+const corHover = 'var(--tertiary-color)'
 
 let barsLength = '5px'
 let styleBtn = `min-width: 90px; min-height: 170px;`
@@ -16,7 +17,7 @@ let styleBtnMD = `min-width: 274px; min-height: 274px;`
 let styleDEGHMD = `border-top: ${barsLengthMD} solid ${cor}; border-right: ${barsLengthMD} solid ${cor};`
 let styleFIMD = `border-top: ${barsLengthMD} solid ${cor};`
 let styleABMD = `border-right: ${barsLengthMD} solid ${cor};`
-let hoverBlock = ' background-color: #3CB371; border-radius: 30px;'
+let hoverBlock = ` background-color: ${corHover}; border-radius: 30px;`
 </script>
 <script>
 import { mapState } from 'vuex'
