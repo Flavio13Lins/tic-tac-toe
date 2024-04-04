@@ -81,7 +81,7 @@ export default {
         variant="outlined"
       ></ScopedGameStateBtn>
       <v-dialog v-model="gameResult" width="auto">
-        <v-card min-width="280" min-height="140" class="bg-blue-lighten-3">
+        <v-card min-width="280" min-height="140" style="background-color: var(--quaternary-color);">
           <v-row justify="space-between" no-gutters>
             <v-spacer></v-spacer>
             <v-card-title class="ma-4">
@@ -94,14 +94,14 @@ export default {
               elevation="0"
               size="x-small"
               class="ma-2"
-              color="blue-lighten-3"
+              color="var(--quaternary-color)"
               icon="mdi-close"
               @click="gameResult = false"
             ></v-btn>
           </v-row>
           <v-card-actions>
             <v-spacer></v-spacer>
-            <v-btn color="teal-darken-4" variant="tonal" @click="restartGame">Restart</v-btn>
+            <v-btn color="var(--primary-color)" variant="tonal" @click="restartGame">Restart</v-btn>
           </v-card-actions>
         </v-card>
       </v-dialog>
