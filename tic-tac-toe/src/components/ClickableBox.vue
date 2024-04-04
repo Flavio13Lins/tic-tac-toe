@@ -17,12 +17,12 @@
       <img
         v-if="btnStatus[position] === 0"
         :style="mdAndUp ? styleXOMD : styleXO"
-        :src="`${greenO}`"
+        :src="`${imageO}`"
       />
       <img
         v-else-if="btnStatus[position] === 1"
         :style="mdAndUp ? styleXOMD : styleXO"
-        :src="`${redX}`"
+        :src="`${imageX}`"
       />
     </v-col>
   </v-hover>
