@@ -11,6 +11,17 @@
           @click="openTabWith(icon.link)"
           variant="text"
         ></v-btn>
+        <v-btn
+         class="mx-4"
+         variant="text"
+         icon
+         href="https://discordid.netlify.app/?id=654752684884361265"
+         target="_blank"
+        >
+          <img
+            :src="`${discordIcon}`"
+          />
+        </v-btn>
       </div>
 
       <div class="pt-0">
