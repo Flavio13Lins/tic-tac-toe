@@ -78,6 +78,10 @@ export default {
         {
           name: 'mdi-instagram',
           link: 'https://www.instagram.com/Flavio13Lins'
+        },
+        {
+          name: 'mdi-badge-account-outline',
+          link: 'https://flavio13lins.github.io/FlavioResume/'
         }
       ]
     }
