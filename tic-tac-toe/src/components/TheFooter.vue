@@ -84,13 +84,13 @@ export default {
         {
           name: 'mdi-badge-account-outline',
           link: 'https://flavio13lins.github.io/FlavioResume/'
-        },
-        discordIcon
-        // {
-        //   name: 'discord',
-        //   link: 'https://www.linkedin.com/in/flavio13lins'
-        // },
-      ]
+        }
+      ],
+      discordIcon
+      // {
+      //   name: 'discord',
+      //   link: 'https://www.linkedin.com/in/flavio13lins'
+      // },
     }
   }
 }
