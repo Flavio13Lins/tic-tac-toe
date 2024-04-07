@@ -46,6 +46,8 @@
 </template>
 
 <script>
+import discordIcon from '@/assets/svgs/discord.svg'
+
 export default {
   created() {
     this.copyText = this.text
@@ -82,7 +84,12 @@ export default {
         {
           name: 'mdi-badge-account-outline',
           link: 'https://flavio13lins.github.io/FlavioResume/'
-        }
+        },
+        discordIcon
+        // {
+        //   name: 'discord',
+        //   link: 'https://www.linkedin.com/in/flavio13lins'
+        // },
       ]
     }
   }
