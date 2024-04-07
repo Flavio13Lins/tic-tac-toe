@@ -81,6 +81,10 @@ export default {
       copyText: '',
       icons: [
         {
+          name: 'mdi-badge-account-outline',
+          link: 'https://flavio13lins.github.io/FlavioResume/'
+        },
+        {
           name: 'mdi-linkedin',
           link: 'https://www.linkedin.com/in/flavio13lins'
         },
@@ -91,10 +95,6 @@ export default {
         {
           name: 'mdi-instagram',
           link: 'https://www.instagram.com/Flavio13Lins'
-        },
-        {
-          name: 'mdi-badge-account-outline',
-          link: 'https://flavio13lins.github.io/FlavioResume/'
         }
       ],
       discordIcon
