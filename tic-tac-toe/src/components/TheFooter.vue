@@ -8,7 +8,7 @@
           class="mx-4"
           :href="icon.link"
           :icon="icon.name"
-          @click="openTabWith(icon.link)"
+          target="_blank"
           variant="text"
         ></v-btn>
         <v-btn
@@ -64,9 +64,6 @@ export default {
     this.copyText = this.text
   },
   methods: {
-    openTabWith(link) {
-      window.open(link, '_blank')
-    },
     async copyCode() {
       await navigator.clipboard.writeText("flavio13lins@gmail.com");
       this.copyText = "Copied"
