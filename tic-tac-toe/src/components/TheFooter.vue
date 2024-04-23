@@ -31,10 +31,7 @@
         finding the solution with reflect or rotations functions to the table if necessary. If you
         want to know more, contact me.
       </div>
-
       <v-divider></v-divider>
-
-      <div>{{ new Date().getFullYear() }} — <strong>Flavio13Lins</strong></div>
       <div>
         Email me at 
         <a href="mailto:flavio13lins@gmail.com">flavio13lins@gmail.com</a>
@@ -52,6 +49,7 @@
           </template>
         </v-tooltip>
       </div>
+      <div>{{ new Date().getFullYear() }} — <strong>Flavio13Lins</strong></div>
     </v-footer>
   </v-layout>
 </template>
