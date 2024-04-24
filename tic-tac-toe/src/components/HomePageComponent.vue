@@ -2,7 +2,6 @@
 import { mapState } from 'vuex'
 import ScopedGameStateBtn from './ScopedGameStateBtn.vue'
 import TableToPlay from './TableToPlay.vue'
-// import TheFooter from './TheFooter.vue'
 
 export default {
   computed: mapState({
