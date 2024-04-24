@@ -10,13 +10,24 @@ export default {
     paused: (state) => state.gameState.paused,
     isLoading: (state) => state.gameState.isLoading,
     finished: (state) => state.gameState.finished,
-    winner: (state) => state.gameState.winner
-  }),
+    winner: (state) => state.gameState.winner,
+    hasPreDef: (state) => state.theme.hasPreDef,
+    isDark: (state) => state.theme.isDark,
+    theme: (state) => state.theme.theme,
+  }), 
   data() {
+    const matchMediaDark = window.matchMedia("(prefers-color-scheme: dark)")
     return {
-      gameResult: false
+      gameResult: false,
+      matchMediaDark,
+      myPrefThemeIsDark: matchMediaDark.matches
     }
   },
+  mounted() {
+    this.matchMediaDark.addEventListener('change', () => {
+      // call action to change theme moduls
+      this.myPrefThemeIsDark = this.matchMediaDark.matches;
+  })},
   watch: {
     finished(nv) {
       if (nv) {
@@ -64,6 +75,10 @@ export default {
   <v-row no-gutters justify="center">
     <v-col align="center">
       <h1>TIC TAC TOE</h1>
+      <!-- <div> 1{{ myPrefThemeIsDark }} </div>
+      <div> 2{{ hasPreDef }} </div>
+      <div> 3{{ paused }} </div>
+      <h2> 4{{ isDark }}</h2> -->
       <ScopedGameStateBtn
         key="Start"
         v-if="!started"
