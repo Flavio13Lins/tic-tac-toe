@@ -52,6 +52,12 @@ export const actions = {
   hasPreDef = true
   theme = 'light'
 
+  if hasPreDef === true
+    preferredTheme is not relevant
+
+  if hasPreDef === false
+    preferredTheme is used and watched to define theme
+    theme = preferredTheme
   */ 
   list({ state }) {
     return state.list
