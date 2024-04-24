@@ -37,6 +37,22 @@ export const getters = {
 
 export const actions = {
   // Create actions to change switchThemeValue, isDark, hasPref, preferredTheme, theme
+  /*
+  Change switchThemeValue to 'auto':
+  hasPreDef = false
+  theme = preferredTheme
+  
+  Change switchThemeValue to 'dark':
+  isDark = true
+  hasPreDef = true
+  theme = 'dark'
+  
+  Change switchThemeValue to 'light':
+  isDark = false
+  hasPreDef = true
+  theme = 'light'
+
+  */ 
   list({ state }) {
     return state.list
   },
