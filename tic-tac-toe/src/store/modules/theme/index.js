@@ -26,6 +26,7 @@ export const getters = {
 }
 
 export const actions = {
+  // Create actions to change isDark, hasPref, preferredColor, theme
   list({ state }) {
     return state.list
   },
