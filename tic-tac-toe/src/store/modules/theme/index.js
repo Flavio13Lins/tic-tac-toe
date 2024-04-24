@@ -12,6 +12,9 @@ export const state = () => ({
 })
 
 export const getters = {
+  switchThemeValue(state) {
+    return state.switchThemeValue
+  },
   hasPreDef(state) {
     return state.hasPreDef
   },
