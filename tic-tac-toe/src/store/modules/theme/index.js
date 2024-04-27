@@ -59,6 +59,23 @@ export const actions = {
     preferredTheme is used and watched to define theme
     theme = preferredTheme
   */ 
+
+  switchThemeClick({state, commit}) {
+    const current = state.switchThemeValue
+    switch(current){
+      case 'auto':
+        commit('setSwitchThemeValue', 'dark')
+        break
+      case 'light':
+        commit('setSwitchThemeValue', 'auto')
+        break
+      case 'dark':
+        commit('setSwitchThemeValue', 'light')
+        break
+    }
+    return state.switchThemeValue
+  },
+  
   list({ state }) {
     return state.list
   },
@@ -86,6 +103,9 @@ export const actions = {
 }
 
 export const mutations = {
+  setSwitchThemeValue(state, data) {
+    state.switchThemeValue = data
+  },
   setHasPreDef(state, data) {
     state.hasPreDef = data
   },
