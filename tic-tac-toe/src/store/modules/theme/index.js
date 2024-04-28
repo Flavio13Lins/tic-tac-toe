@@ -60,28 +60,34 @@ export const actions = {
     theme = preferredTheme
   */ 
 
-  switchThemeClick({state, commit}) {
+  changeHasPreDefValue({state, commit}, value) {
+    commit('setHasPreDef', value)
+    if(value === false){
+      commit('setTheme', state.preferredTheme)
+    } else if(value === true) {
+      commit('setTheme', state.switchThemeValue)
+    }
+  },
+
+  switchThemeClick({state, commit, dispatch}) {
     const current = state.switchThemeValue
     switch(current){
       case 'auto':
         // Current == auto change theme to dark
         commit('setSwitchThemeValue', 'dark')
-        commit('setIsDark', false)
-        commit('setHasPreDef', true)
-        commit('setTheme', 'dark')
+        commit('setIsDark', true)
+        dispatch('changeHasPreDefValue', true)
         break
       case 'light':
         // Current == light change theme to auto
         commit('setSwitchThemeValue', 'auto')
-        commit('setHasPreDef', false)
-        commit('setTheme', state.preferredTheme)
+        dispatch('changeHasPreDefValue', false)
         break
       case 'dark':
         // Current == dark change theme to light
         commit('setSwitchThemeValue', 'light')
-        commit('setIsDark', true)
-        commit('setHasPreDef', true)
-        commit('setTheme', 'light')
+        commit('setIsDark', false)
+        dispatch('changeHasPreDefValue', true)
         break
     }
     return state.switchThemeValue
