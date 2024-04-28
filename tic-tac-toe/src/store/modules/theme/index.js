@@ -91,31 +91,6 @@ export const actions = {
         break
     }
     return state.switchThemeValue
-  },
-  
-  list({ state }) {
-    return state.list
-  },
-
-  listOne({ state }, nome) {
-    let exercicio = {}
-    state.list.forEach((element) => {
-      if (element.nome === nome) {
-        exercicio = element
-      }
-    })
-    return exercicio
-  },
-
-  create({ dispatch, commit }, exercise) {
-    commit('addToList', exercise)
-    dispatch('list')
-    return true
-  },
-
-  delete({ dispatch, commit }, exercise) {
-    commit('deleteFromList', exercise)
-    dispatch('list')
   }
 }
 
