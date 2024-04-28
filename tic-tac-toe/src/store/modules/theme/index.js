@@ -64,13 +64,24 @@ export const actions = {
     const current = state.switchThemeValue
     switch(current){
       case 'auto':
+        // Current == auto change theme to dark
         commit('setSwitchThemeValue', 'dark')
+        commit('setIsDark', false)
+        commit('setHasPreDef', true)
+        commit('setTheme', 'dark')
         break
       case 'light':
+        // Current == light change theme to auto
         commit('setSwitchThemeValue', 'auto')
+        commit('setHasPreDef', false)
+        commit('setTheme', state.preferredTheme)
         break
       case 'dark':
+        // Current == dark change theme to light
         commit('setSwitchThemeValue', 'light')
+        commit('setIsDark', true)
+        commit('setHasPreDef', true)
+        commit('setTheme', 'light')
         break
     }
     return state.switchThemeValue
