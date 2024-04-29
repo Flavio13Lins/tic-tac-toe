@@ -26,12 +26,6 @@ export const getters = {
   },
   theme(state) {
     return state.theme
-  },
-  x(state) {
-    return state.x
-  },
-  y(state) {
-    return state.y
   }
 }
 
@@ -113,12 +107,6 @@ export const mutations = {
   },
   setPreferredTheme(state, data) {
     state.preferredTheme = data
-  },
-  setx(state, data) {
-    state.x = data
-  },
-  sety(state, data) {
-    state.y = data
   },
   setTheme(state, data) {
     state.theme = data
