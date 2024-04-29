@@ -4,6 +4,7 @@ import TheFooter from '@/components/TheFooter.vue'
 </script>
 
 <template>
+  <!-- Btn with switch in header to change theme [auto, dark, light] -->
   <div class="body">
     <RouterView />
     <TheFooter class="footer" />
@@ -11,6 +12,7 @@ import TheFooter from '@/components/TheFooter.vue'
 </template>
 
 <style scoped>
+/* TODO: simulate a class with variable background color based on a vuex value */
 .body {
   display: flex;
   flex-direction: column;
