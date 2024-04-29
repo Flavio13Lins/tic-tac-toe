@@ -36,7 +36,6 @@ export const getters = {
 }
 
 export const actions = {
-  // Create actions to change switchThemeValue, isDark, hasPref, preferredTheme, theme
   /*
   Change switchThemeValue to 'auto':
   hasPreDef = false
@@ -59,6 +58,14 @@ export const actions = {
     preferredTheme is used and watched to define theme
     theme = preferredTheme
   */ 
+
+    // TODO:
+  // Refactor in switchThemeClick and changeHasPreDefValue considering new action function:
+  // setTheme 
+  // verify setHasPreDef, preferredTheme, switchThemeValue
+  // then setIsDark and setTheme
+  // the change allows in the future the system to call a action specifying the theme to setTheme
+  // and the other values be mutated as consequence
 
   changeHasPreDefValue({state, commit}, value) {
     commit('setHasPreDef', value)
