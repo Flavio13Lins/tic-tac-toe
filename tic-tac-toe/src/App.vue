@@ -6,6 +6,7 @@ import TheFooter from '@/components/TheFooter.vue'
 <template>
   <!-- Btn with switch in header to change theme [auto, dark, light] -->
   <!-- find a way to change the dark mode here and affect childs but not changing the css of childs -->
+  <!-- Possible to let only RouterView component and pass all needed props to it -->
   <div class="body">
     <RouterView />
     <TheFooter class="footer" />
