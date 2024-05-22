@@ -74,10 +74,10 @@ export default {
   <v-row no-gutters justify="center">
     <v-col align="center">
       <h1>TIC TAC TOE</h1>
-      <!-- <div> 1{{ myPrefThemeIsDark }} </div>
+      <div> 1{{ myPrefThemeIsDark }} </div>
       <div> 2{{ hasPreDef }} </div>
       <div> 3{{ paused }} </div>
-      <h2> 4{{ isDark }}</h2> -->
+      <h2> 4{{ isDark }}</h2>
       <ScopedGameStateBtn
         key="Start"
         v-if="!started"
