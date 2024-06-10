@@ -1,0 +1,19 @@
+{
+	"image": "mcr.microsoft.com/devcontainers/universal:2",
+	"features": {
+		"ghcr.io/devcontainers-contrib/features/vue-cli:2": {}
+	},
+
+	"waitFor": "onCreateCommand",
+	"postCreateCommand": "",
+	"postAttachCommand": {
+	  "server": "cd tic-tac-toe ; npm install ; npm run dev"
+	},
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"Vue.volar"
+			]
+		}
+	}
+}
