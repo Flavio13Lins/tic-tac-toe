@@ -8,8 +8,6 @@ This is a project to put into practice some of my abilities and training while h
 
 https://flavio13lins-tic-tac-toe.netlify.app/
 
-https://tictactoe1x1.select
-
 ## Instructions to run the project
 
 This template should help get you started developing with Vue 3 in Vite.
